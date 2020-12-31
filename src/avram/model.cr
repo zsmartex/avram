@@ -165,6 +165,10 @@ abstract class Avram::Model
     DB.mapping({
       {% for column in columns %}
         {{column[:name]}}: {
+          {% if column[:type].id == BigFloat.id %}
+            type: PG::Numeric,
+          {% elsif column[:type].id == Array(BigFloat).id %}
+            type: Array(PG::Numeric),
           {% if column[:type].id == Float64.id %}
             type: PG::Numeric,
           {% elsif column[:type].id == Array(Float64).id %}

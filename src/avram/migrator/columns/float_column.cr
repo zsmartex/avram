@@ -28,4 +28,7 @@ module Avram::Migrator::Columns
 
   class Float64Column(T) < FloatColumn(T)
   end
+
+  class BigFloatColumn(T) < FloatColumn(T)
+  end
 end

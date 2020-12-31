@@ -28,6 +28,12 @@ struct Int64
   end
 end
 
+struct BigFloat
+  def blank?
+    nil?
+  end
+end
+
 struct Float64
   def blank?
     nil?
